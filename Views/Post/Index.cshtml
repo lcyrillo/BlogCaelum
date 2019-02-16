@@ -1,0 +1,36 @@
+@model IList<Blog.Models.Post>
+<html>
+    <head>
+        <title>Posts</title>
+    </head>
+    <body>
+        <h1>Lista de Posts</h1>
+
+        <p>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Resumo</th>
+                            <th>Categoria</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach(var p in Model)
+                        {
+                            <tr>
+                                <td>@p.Titulo</td>
+                                <td>@p.Resumo</td>
+                                <td>@p.Categoria</td>
+                                <td><a href="/Post/Remove/@p.Id">Remover</a></td>
+                                <td><a href="/Post/Edita/@p.Id">Editar</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </p>
+    </body>
+</html>
