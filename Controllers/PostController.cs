@@ -61,21 +61,21 @@ namespace Blog.Controllers
         #endregion
     
         #region Visualiza
-        public Post Visualiza(int id)
+        public IActionResult Visualiza(int id)
         {
             PostDAO dao = new PostDAO();
 
-            Post post = dao.listaPorId(id);
+            Post post = dao.ListaPorId(id);
 
             return View("Visualiza", post);
         }
         #endregion
 
         #region Edita
-        public IActionResult Edita(Post post)
-        {
+        // public IActionResult Edita(Post post)
+        // {
             
-        }
+        // }
         #endregion
     }   
 }

@@ -24,7 +24,7 @@ namespace Blog.DAO
         {
             using(BlogContext context = new BlogContext())
             {
-                Post post = context.Posts.ListaPorId(id);
+                Post post = context.Posts.Find(id);
 
                 return post;
             }
@@ -70,7 +70,7 @@ namespace Blog.DAO
         }
         #endregion
 
-        #
+        
     }
 }
 

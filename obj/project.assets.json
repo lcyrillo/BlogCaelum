@@ -11799,11 +11799,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas\\Source\\Repos\\caelum\\Blog\\Blog.csproj",
+      "projectUniqueName": "c:\\Users\\lucas\\Source\\Repos\\caelum\\BlogCaelum\\Blog.csproj",
       "projectName": "Blog",
-      "projectPath": "C:\\Users\\lucas\\Source\\Repos\\caelum\\Blog\\Blog.csproj",
+      "projectPath": "c:\\Users\\lucas\\Source\\Repos\\caelum\\BlogCaelum\\Blog.csproj",
       "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas\\Source\\Repos\\caelum\\Blog\\obj\\",
+      "outputPath": "c:\\Users\\lucas\\Source\\Repos\\caelum\\BlogCaelum\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
