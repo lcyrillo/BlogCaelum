@@ -11,9 +11,13 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>&nbsp;</th>
                             <th>Titulo</th>
                             <th>Resumo</th>
                             <th>Categoria</th>
+                            <th>Publicado?</th>
+                            <th>Data de Publicação</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
 
@@ -21,11 +25,32 @@
                         @foreach(var p in Model)
                         {
                             <tr>
+                                <td><a href="/Post/Visualiza/@p.Id">Editar</a></td>
                                 <td>@p.Titulo</td>
                                 <td>@p.Resumo</td>
                                 <td>@p.Categoria</td>
+                                <td>
+                                    @if(p.Publicado)
+                                    {
+                                         @Html.Raw("Sim") 
+                                    } 
+                                    else 
+                                    { 
+                                        @Html.Raw("Não")
+                                    }
+                                </td>
+                                <td>
+                                    @if(p.Publicado)
+                                    {
+                                         @Html.Raw(p.DataPublicacao) 
+                                    } 
+                                    else 
+                                    { 
+                                        @Html.Raw("-")
+                                    }
+                                </td>
                                 <td><a href="/Post/Remove/@p.Id">Remover</a></td>
-                                <td><a href="/Post/Visualiza/@p.Id">Editar</a></td>
+                                <td><a href="/Post/Publica/@p.Id">Publicar</a></td>
                             </tr>
                         }
                     </tbody>

@@ -43,7 +43,7 @@ namespace AspNetCore
             WriteLiteral("<html>\r\n    ");
             EndContext();
             BeginContext(12, 48, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e65f70a4e614259b9814010924d2680", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30f459d0de104700a19f620912cdef9d", async() => {
                 BeginContext(18, 35, true);
                 WriteLiteral("\r\n        <title>Novo</title>\r\n    ");
                 EndContext();
@@ -63,7 +63,7 @@ namespace AspNetCore
             WriteLiteral("\r\n    ");
             EndContext();
             BeginContext(66, 420, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a3071eff4dac4dfe93bae66a51c59c03", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f6b2edb4cfc4d25926d44f19fc21cb9", async() => {
                 BeginContext(72, 407, true);
                 WriteLiteral(@"
         <form action=""/Post/Adiciona"" method=""post"">

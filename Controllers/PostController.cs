@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Blog.DAO;
@@ -8,7 +9,6 @@ namespace Blog.Controllers
 {
     public class PostController : Controller
     {
-
         #region Index
         public IActionResult Index()
         {
@@ -77,6 +77,17 @@ namespace Blog.Controllers
             PostDAO dao = new PostDAO();
 
             dao.Atualiza(post);
+
+            return RedirectToAction("Index");
+        }
+        #endregion
+
+        #region Publica
+        public IActionResult Publica(int id)
+        {
+            PostDAO dao = new PostDAO();
+
+            dao.Publica(id);
 
             return RedirectToAction("Index");
         }

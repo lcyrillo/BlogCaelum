@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Blog.Infra;
@@ -82,6 +83,20 @@ namespace Blog.DAO
         }
         #endregion
         
+        #region Publica
+        public void Publica(int id)
+        {
+            using(BlogContext context = new BlogContext())
+            {
+                Post post = context.Posts.Find(id);
+
+                post.Publicado = true;
+                post.DataPublicacao = DateTime.Now;
+
+                context.SaveChanges();
+            }
+        }
+        #endregion
     }
 }
 
