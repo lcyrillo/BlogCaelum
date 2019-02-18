@@ -39,13 +39,13 @@ namespace Blog.Controllers
 
         #region Adiciona
         [HttpPost]
-        public void Adiciona(Post post)
+        public IActionResult Adiciona(Post post)
         {
             PostDAO dao = new PostDAO();
 
             dao.Adiciona(post);
 
-            RedirectToAction("Index");
+            return RedirectToAction("Index");
         }
         #endregion
     
@@ -71,11 +71,15 @@ namespace Blog.Controllers
         }
         #endregion
 
-        #region Edita
-        // public IActionResult Edita(Post post)
-        // {
-            
-        // }
+        #region Atualiza
+        public IActionResult Atualiza(Post post)
+        {
+            PostDAO dao = new PostDAO();
+
+            dao.Atualiza(post);
+
+            return RedirectToAction("Index");
+        }
         #endregion
     }   
 }

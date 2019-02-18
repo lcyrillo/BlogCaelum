@@ -1,4 +1,4 @@
-@model Post
+@model Blog.Models.Post
 
 <html>
     <head>
@@ -6,7 +6,7 @@
     </head>
     <body>
         <div>
-            <form action="/Post/Edita" method="post">
+            <form action="/Post/Atualiza" method="post">
                 <input type="hidden" name="id" value="@Model.Id" />
                 <label>Titulo: <input name="titulo" value="@Model.Titulo"></label>
                 <label>Titulo: <input name="resumo" value="@Model.Resumo"></label>

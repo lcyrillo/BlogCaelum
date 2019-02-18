@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Blog.Infra;
 using Blog.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Blog.DAO
 {
@@ -70,6 +71,16 @@ namespace Blog.DAO
         }
         #endregion
 
+        #region Atualiza
+        public void Atualiza(Post post)
+        {
+            using(BlogContext context = new BlogContext())
+            {
+                context.Entry(post).State = EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+        #endregion
         
     }
 }
