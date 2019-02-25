@@ -7,12 +7,15 @@
             <label>
                 Titulo: <input name="Titulo">
             </label>
+            @Html.ValidationMessage("titulo")
             <label>
                 Resumo: <input name="Resumo">
             </label>
+            @Html.ValidationMessage("resumo")
             <label>
                 Categoria: <input name="Categoria">
             </label>
+            @Html.ValidationMessage("categoria")
             <button type="submit">Cadastrar</button>
         </form>
     </body>

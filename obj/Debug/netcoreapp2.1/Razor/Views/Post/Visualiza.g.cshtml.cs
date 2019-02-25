@@ -43,7 +43,7 @@ namespace AspNetCore
             WriteLiteral("\r\n<html>\r\n    ");
             EndContext();
             BeginContext(39, 44, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "095ef643974f40ee9c29044bcd7992db", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8fd67eccc06944879387470aba5b502f", async() => {
                 BeginContext(45, 31, true);
                 WriteLiteral("\r\n        <title></title>\r\n    ");
                 EndContext();
@@ -63,7 +63,7 @@ namespace AspNetCore
             WriteLiteral("\r\n    ");
             EndContext();
             BeginContext(89, 514, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "45c0e9274ff34660a6c259b8dc3deac8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a229318e69f24b80b95d45236be1886f", async() => {
                 BeginContext(95, 121, true);
                 WriteLiteral("\r\n        <div>\r\n            <form action=\"/Post/Atualiza\" method=\"post\">\r\n                <input type=\"hidden\" name=\"id\"");
                 EndContext();

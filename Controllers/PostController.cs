@@ -23,7 +23,11 @@ namespace Blog.Controllers
         #endregion
 
         #region Novo
-        public IActionResult Novo() => View();
+        public IActionResult Novo()
+        {
+            var model = new Post();
+            return View(model);
+        }
         #endregion
 
         #region Categoria
@@ -41,11 +45,19 @@ namespace Blog.Controllers
         [HttpPost]
         public IActionResult Adiciona(Post post)
         {
-            PostDAO dao = new PostDAO();
+            if(ModelState.IsValid)
+            {
+                PostDAO dao = new PostDAO();
 
-            dao.Adiciona(post);
+                dao.Adiciona(post);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Novo", post);
+            }
+            
         }
         #endregion
     
@@ -74,11 +86,18 @@ namespace Blog.Controllers
         #region Atualiza
         public IActionResult Atualiza(Post post)
         {
-            PostDAO dao = new PostDAO();
+            if(ModelState.IsValid)
+            {
+                PostDAO dao = new PostDAO();
 
-            dao.Atualiza(post);
+                dao.Atualiza(post);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Visualiza", post);
+            }
         }
         #endregion
 
