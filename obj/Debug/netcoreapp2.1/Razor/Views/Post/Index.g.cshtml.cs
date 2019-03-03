@@ -43,7 +43,7 @@ namespace AspNetCore
             WriteLiteral("<html>\r\n    ");
             EndContext();
             BeginContext(44, 49, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3bf817c252f24f0ca416e0f6d2234a1f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9c25e8eee9749f5a264e15bc1f1490d", async() => {
                 BeginContext(50, 36, true);
                 WriteLiteral("\r\n        <title>Posts</title>\r\n    ");
                 EndContext();
@@ -63,7 +63,7 @@ namespace AspNetCore
             WriteLiteral("\r\n    ");
             EndContext();
             BeginContext(99, 2179, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d0edad339bf4db1af8fd5ce74424487", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93eb3fbc81c2484bbe690ba40280a25c", async() => {
                 BeginContext(105, 578, true);
                 WriteLiteral(@"
         <h1>Lista de Posts</h1>

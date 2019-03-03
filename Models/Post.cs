@@ -6,10 +6,12 @@ namespace Blog.Models
     public class Post
     {
         public int Id { get; set; }
-        [Required][StringLength(50)]
+        [Required(ErrorMessage="Preencha o Titulo")]
+        [StringLength(50, ErrorMessage="Titulo Maior Que 50 Caracteres")]
         public string Titulo { get; set; }
-        [Required]
+        [Required(ErrorMessage="Preencha o Resumo")]
         public string Resumo { get; set; }
+        [Required(ErrorMessage="Preencha a Categoria")]
         public string Categoria { get; set; }
         public DateTime? DataPublicacao { get; set; }
         public bool Publicado { get; set; }

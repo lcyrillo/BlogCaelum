@@ -8,11 +8,26 @@
         <div>
             <form action="/Post/Atualiza" method="post">
                 <input type="hidden" name="id" value="@Model.Id" />
-                <label>Titulo: <input name="titulo" value="@Model.Titulo"></label>
-                <label>Titulo: <input name="resumo" value="@Model.Resumo"></label>
-                <label>Titulo: <input name="categoria" value="@Model.Categoria"></label>
+                <label>
+                    Titulo: <input name="titulo" required maxlength="50" value="@Model.Titulo">
+                </label>
+                 @Html.ValidationMessage("Titulo")
+                <label>
+                        Resumo: <input name="resumo" required value="@Model.Resumo">
+                </label>
+                @Html.ValidationMessage("Resumo")
+                <label>
+                        Categoria: <input name="categoria" value="@Model.Categoria">
+                </label>
+                @Html.ValidationMessage("Categoria")
                 <button type="submit">Cadastrar</button>
             </form>
         </div>
+
+        <script src="~/js/jquery.min.js"></script>
+        <script src="~/js/jquery.validate.min.js"></script>
+        <script>
+            $("form").validate();
+        </script>
     </body>
 </html>

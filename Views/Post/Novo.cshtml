@@ -5,18 +5,24 @@
     <body>
         <form action="/Post/Adiciona" method="post">
             <label>
-                Titulo: <input name="Titulo">
+                Titulo: <input name="Titulo" value="@Model.Titulo">
             </label>
             @Html.ValidationMessage("titulo")
             <label>
-                Resumo: <input name="Resumo">
+                Resumo: <input name="Resumo" value="@Model.Resumo">
             </label>
             @Html.ValidationMessage("resumo")
             <label>
-                Categoria: <input name="Categoria">
+                Categoria: <input name="Categoria" value="@Model.Categoria">
             </label>
             @Html.ValidationMessage("categoria")
             <button type="submit">Cadastrar</button>
         </form>
+
+        <script src="~/js/jquery.min.js"></script>
+        <script src="~/js/jquery.validate.min.js"></script>
+        <script>
+            $("form").validate();
+        </script>
     </body>
 </html>
