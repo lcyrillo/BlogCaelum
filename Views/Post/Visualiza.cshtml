@@ -6,28 +6,50 @@
     </head>
     <body>
         <div>
-            <form action="/Post/Atualiza" method="post">
-                <input type="hidden" name="id" value="@Model.Id" />
-                <label>
-                    Titulo: <input name="titulo" required maxlength="50" value="@Model.Titulo">
-                </label>
-                 @Html.ValidationMessage("Titulo")
-                <label>
-                        Resumo: <input name="resumo" required value="@Model.Resumo">
-                </label>
-                @Html.ValidationMessage("Resumo")
-                <label>
-                        Categoria: <input name="categoria" value="@Model.Categoria">
-                </label>
-                @Html.ValidationMessage("Categoria")
+            @using(Html.BeginForm("Atualiza", "Post"))
+            {
+                @Html.HiddenFor(p => p.Id)
+                @Html.HiddenFor(p => p.Publicado)
+                @Html.HiddenFor(p => p.DataPublicacao)
+
+                @Html.LabelFor(p => p.Titulo)
+                @Html.TextBoxFor(p => p.Titulo)
+                @Html.ValidationMessageFor(p => p.Titulo)
+
+                @Html.LabelFor(p => p.Resumo)
+                @Html.TextBoxFor(p => p.Resumo)
+                @Html.ValidationMessageFor(p => p.Resumo)
+
+                @Html.LabelFor(p => p.Categoria)
+                @Html.TextBoxFor(p => p.Categoria)
+                @Html.ValidationMessageFor(p => p.Categoria)
+
                 <button type="submit">Cadastrar</button>
-            </form>
+            }
+
+
         </div>
 
         <script src="~/js/jquery.min.js"></script>
         <script src="~/js/jquery.validate.min.js"></script>
-        <script>
-            $("form").validate();
-        </script>
+        <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
     </body>
 </html>
+
+
+            <!-- <form action="/Post/Atualiza" method="post">
+            <input type="hidden" name="id" value="Model.Id" />
+                <label>
+                    Titulo: <input name="titulo" required maxlength="50" value="Model.Titulo">
+                </label>
+                 Html.ValidationMessage("Titulo")
+                <label>
+                        Resumo: <input name="resumo" required value="Model.Resumo">
+                </label>
+                Html.ValidationMessage("Resumo")
+                <label>
+                        Categoria: <input name="categoria" value="Model.Categoria">
+                </label>
+                Html.ValidationMessage("Categoria")
+                <button type="submit">Cadastrar</button>
+            </form> -->

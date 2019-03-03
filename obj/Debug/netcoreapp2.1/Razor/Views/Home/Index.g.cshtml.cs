@@ -43,7 +43,7 @@ namespace AspNetCore
             WriteLiteral("<html>\r\n    ");
             EndContext();
             BeginContext(12, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "21fa1d9808004e76a7b6c8136dd0dc37", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2144c7087a644818a482fcb93132d5bc", async() => {
                 BeginContext(18, 56, true);
                 WriteLiteral("\r\n        <title>Caelum - ASP.NET CORE MVC</title>\r\n    ");
                 EndContext();
@@ -63,7 +63,7 @@ namespace AspNetCore
             WriteLiteral("\r\n\r\n    ");
             EndContext();
             BeginContext(89, 50, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "052cd8fb1a93451cbeb4e41461868340", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a066e1d5dc740bf84d1ad4070bc7cd4", async() => {
                 BeginContext(95, 37, true);
                 WriteLiteral("\r\n        <h2>HOME - INDEX</H2>\r\n    ");
                 EndContext();

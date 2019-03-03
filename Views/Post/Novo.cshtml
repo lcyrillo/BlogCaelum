@@ -1,9 +1,34 @@
+@model Blog.Models.Post
 <html>
     <head>
         <title>Novo</title>
     </head>
     <body>
-        <form action="/Post/Adiciona" method="post">
+            @using (Html.BeginForm("Adiciona", "Post"))
+            {
+                @Html.LabelFor(p => p.Titulo)
+                @Html.TextBoxFor(p => p.Titulo)
+                @Html.ValidationMessageFor(p => p.Titulo)
+
+                @Html.LabelFor(p => p.Resumo)
+                @Html.TextBoxFor(p => p.Resumo)
+                @Html.ValidationMessageFor(p => p.Resumo)
+
+                @Html.LabelFor(p => p.Categoria)
+                @Html.TextBoxFor(p => p.Categoria)
+                @Html.ValidationMessageFor(p => p.Categoria)
+
+                <button type="submit">Cadastrar</button>
+            }
+        
+        <script src="~/js/jquery.min.js"></script>
+        <script src="~/js/jquery.validate.min.js"></script>
+        <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
+    </body>
+</html>
+
+
+ <!-- <form action="/Post/Adiciona" method="post">
             <label>
                 Titulo: <input name="Titulo" value="@Model.Titulo">
             </label>
@@ -17,12 +42,4 @@
             </label>
             @Html.ValidationMessage("categoria")
             <button type="submit">Cadastrar</button>
-        </form>
-
-        <script src="~/js/jquery.min.js"></script>
-        <script src="~/js/jquery.validate.min.js"></script>
-        <script>
-            $("form").validate();
-        </script>
-    </body>
-</html>
+        </form> -->

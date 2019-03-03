@@ -8,6 +8,7 @@ namespace Blog.Models
         public int Id { get; set; }
         [Required(ErrorMessage="Preencha o Titulo")]
         [StringLength(50, ErrorMessage="Titulo Maior Que 50 Caracteres")]
+        [Display(Name="Titulo")]
         public string Titulo { get; set; }
         [Required(ErrorMessage="Preencha o Resumo")]
         public string Resumo { get; set; }
