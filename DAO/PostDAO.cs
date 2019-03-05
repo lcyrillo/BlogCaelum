@@ -97,6 +97,19 @@ namespace Blog.DAO
             }
         }
         #endregion
+    
+        #region FiltraPorCategoriaTermo
+        public IList<string> FiltraPorCategoriaTermo(string termo)
+        {
+            using(BlogContext context = new BlogContext())
+            {
+                return context.Posts.Where(p => p.Categoria.Contains(termo))
+                             .Select(p => p.Categoria)
+                             .Distinct()
+                             .ToList();
+            }
+        }
+        #endregion
     }
 }
 

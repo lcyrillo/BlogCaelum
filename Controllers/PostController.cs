@@ -111,5 +111,15 @@ namespace Blog.Controllers
             return RedirectToAction("Index");
         }
         #endregion
+   
+        #region CategoriaAutocomplete
+        [HttpPost]
+        public IActionResult CategoriaAutocomplete(string termo)
+        {
+            PostDAO dao = new PostDAO();
+            var model = dao.FiltraPorCategoriaTermo(termo);
+            return Json(model);
+        }
+        #endregion
     }   
 }

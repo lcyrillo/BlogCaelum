@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Novo</title>
+        <link href="~/css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
             @using(Html.BeginForm("Adiciona", "Post"))
@@ -14,6 +15,19 @@
         <script src="~/js/jquery.min.js"></script>
         <script src="~/js/jquery.validate.min.js"></script>
         <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/js/jquery-ui.min.js"></script>
+        <script>
+            $("input[name='Categoria'").autocomplete({
+                source: function(request, response){
+                    $.post(
+                        "@Url.Action("CategoriaAutocomplete")",
+                        { termo: request.term },
+                        function(data){
+                            response(data);
+                        });     
+                    }
+                });
+        </script>
     </body>
 </html>
 
