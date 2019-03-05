@@ -1,5 +1,4 @@
 @model Blog.Models.Post
-
 <html>
     <head>
         <title></title>
@@ -8,21 +7,7 @@
         <div>
             @using(Html.BeginForm("Atualiza", "Post"))
             {
-                @Html.HiddenFor(p => p.Id)
-                @Html.HiddenFor(p => p.Publicado)
-                @Html.HiddenFor(p => p.DataPublicacao)
-
-                @Html.LabelFor(p => p.Titulo)
-                @Html.TextBoxFor(p => p.Titulo)
-                @Html.ValidationMessageFor(p => p.Titulo)
-
-                @Html.LabelFor(p => p.Resumo)
-                @Html.TextBoxFor(p => p.Resumo)
-                @Html.ValidationMessageFor(p => p.Resumo)
-
-                @Html.LabelFor(p => p.Categoria)
-                @Html.TextBoxFor(p => p.Categoria)
-                @Html.ValidationMessageFor(p => p.Categoria)
+                @Html.EditorFor(p => p)
 
                 <button type="submit">Cadastrar</button>
             }
