@@ -13,7 +13,13 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#line 1 "C:\Users\lucas\Source\Repos\caelum\BlogCaelum\Views\_ViewImports.cshtml"
+using Blog.Models;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"225d9fb633fc0eea04007f5d0b9c7c6b7febf679", @"/Views/Shared/EditorTemplates/Post.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9463245a18c9933e20fac14d84ef041a43206efd", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_EditorTemplates_Post : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Blog.Models.Post>
     {
         #pragma warning disable 1998

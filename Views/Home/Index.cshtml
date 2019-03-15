@@ -1,9 +1,11 @@
-<html>
-    <head>
-        <title>Caelum - ASP.NET CORE MVC</title>
-    </head>
+@model IList<Post>
 
-    <body>
-        <h2>HOME - INDEX</H2>
-    </body>
-</html>
+<div>
+    @foreach (var item in Model)
+    {
+        <article>
+            <h1>@item.Titulo</h1>
+            <p>@item.Resumo</p>
+        </article>
+    }
+</div>

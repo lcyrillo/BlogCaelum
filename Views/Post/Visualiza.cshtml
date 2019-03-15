@@ -1,25 +1,18 @@
 @model Blog.Models.Post
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <div>
-            @using(Html.BeginForm("Atualiza", "Post"))
-            {
-                @Html.EditorFor(p => p)
 
-                <button type="submit">Cadastrar</button>
-            }
+<div>
+    @using(Html.BeginForm("Atualiza", "Post"))
+    {
+        @Html.EditorFor(p => p)
 
+        <button type="submit">Cadastrar</button>
+    }
 
-        </div>
+</div>
 
-        <script src="~/js/jquery.min.js"></script>
-        <script src="~/js/jquery.validate.min.js"></script>
-        <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
-    </body>
-</html>
+@section Scripts{
+    @await Html.PartialAsync("_Scripts")
+}
 
 
             <!-- <form action="/Post/Atualiza" method="post">

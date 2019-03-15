@@ -1,35 +1,16 @@
-@model Blog.Models.Post
-<html>
-    <head>
-        <title>Novo</title>
-        <link href="~/css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-            @using(Html.BeginForm("Adiciona", "Post"))
-            {
-                @Html.EditorFor(p => p)
+@model Post
 
-                <button type="submit">Cadastrar</button>
-            }
-        
-        <script src="~/js/jquery.min.js"></script>
-        <script src="~/js/jquery.validate.min.js"></script>
-        <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
-        <script src="~/js/jquery-ui.min.js"></script>
-        <script>
-            $("input[name='Categoria'").autocomplete({
-                source: function(request, response){
-                    $.post(
-                        "@Url.Action("CategoriaAutocomplete")",
-                        { termo: request.term },
-                        function(data){
-                            response(data);
-                        });     
-                    }
-                });
-        </script>
-    </body>
-</html>
+@using(Html.BeginForm("Adiciona", "Post"))
+{
+    @Html.EditorFor(p => p)
+
+    <button type="submit">Cadastrar</button>
+}
+
+@section Scripts{
+    @await Html.PartialAsync("_Scripts")
+}
+
 
 
  <!-- <form action="/Post/Adiciona" method="post">
