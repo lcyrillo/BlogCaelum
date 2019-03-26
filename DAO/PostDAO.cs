@@ -110,6 +110,17 @@ namespace Blog.DAO
             }
         }
         #endregion
+
+        #region ListaPublicados
+        public IList<Post> ListaPublicados()
+        {
+            using(BlogContext context = new BlogContext())
+            {
+                return context.Posts.Where(p => p.Publicado)
+                                    .OrderByDescending(p => p.DataPublicacao).ToList();
+            }
+        }
+        #endregion
     }
 }
 

@@ -1,0 +1,195 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+
+html{
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 3em;
+    box-sizing: border-box;
+}
+
+header {
+    /* Altura 480 px  largura: 1920 */
+    font-family: 'Gloria Hallelujah', cursive;
+    background-image: url(../images/header.jpg);
+    background-position: center;
+    color: white;
+    padding: 1em;
+    padding-top: 4em;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0, 0.2);
+}
+
+nav a {
+    color: #ddd;
+    padding: 0.5em 0;
+    margin-right: 1em;
+    display:inline-block;
+}
+
+nav ul {
+    padding: 0;
+    margin:0 1em;
+}
+
+nav li {
+    display: inline-block;
+}
+
+
+main{
+    margin-bottom: 1em;
+}
+
+aside {
+    padding: 1em;
+    background-color: white;
+}
+
+footer{
+    padding: 1em;
+    background-color: #31385a;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+
+article {
+    background-color:white;
+    padding: 1em;
+    font-family: Merriweather, 'Times New Roman', serif;
+}
+
+.blog-post-meta{
+    margin-bottom: 1em;
+    color: #AAA;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3em;
+    line-height:1em;
+}
+
+h2 {
+    margin: 0;
+}
+
+
+article + article {
+    margin-top: 1em;
+}
+
+.conteudo{
+    padding: 1em;
+    overflow: auto;
+    color: #333;
+}
+
+aside ul {
+    padding: 0;
+}
+aside li{
+    list-style:none;
+    margin-left: 1em;
+    margin-bottom: 0.25em;
+}
+
+table {
+    width: 100%;
+    margin: 1em 0;
+}
+tbody tr:hover{
+    background-color: #EEE;
+}
+tr + tr {
+    border-top:1px solid #CCC;
+}
+td {
+    padding: .5em;
+}
+
+td a:before{
+    font-size: 20px;
+}
+td a{
+    font-size: 0;
+    text-decoration: none;
+}
+th{
+    color: #666;
+    text-align: center;
+}
+
+label {
+    margin-top: 1em;
+    font-weight: bold;
+    display:inline-block;
+    margin-bottom: .25em;
+    color: #666;
+}
+
+input[type=checkbox]{
+    width: 1.25em;
+    height: 1.25em;
+    display: block;
+}
+
+[type=text],[type=password],textarea, select{
+    box-sizing: border-box;
+    width:100%;
+    border: 1px solid #CCC;
+    padding: .5em;
+}
+
+input[type=submit]{
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    font-weight: bold;
+    color: white;
+    background-color:#31385a;
+    border: none;
+}
+
+.input-validation-error {
+    border-color: red;
+    background-color: #ffced2;
+}
+
+.field-validation-error, .field-validation-valid{
+    color: red;
+    display: block;
+    margin-top: .5em;
+}
+
+@media (min-width: 50em){
+    .conteudo {
+        width: 50em;
+        margin: 0 auto;
+    }
+    main{
+        float: left;
+        width: 35em;
+    }
+    aside {
+        width: 12em;
+        float: right;
+    }
+    td a {
+        font-size: 1em;
+    }
+}

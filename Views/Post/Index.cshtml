@@ -1,68 +1,64 @@
 <!--addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers-->
 @model IList<Blog.Models.Post>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>Index</title>
-    </head>
-    <body>
-        <h1>Lista de Posts</h1>
-        @Html.ActionLink("Incluir", "Novo", "Post")
-        <p>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th>Titulo</th>
-                            <th>Resumo</th>
-                            <th>Categoria</th>
-                            <th>Publicado?</th>
-                            <th>Data de Publicação</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
 
-                    <tbody>
-                        @foreach(var p in Model)
-                        {
-                            <tr>
-                                <td>@Html.ActionLink("Editar", "Visualiza", new { Id = p.Id })</td>
-                                <td>@p.Titulo</td>
-                                <td>@p.Resumo</td>
-                                <td>@p.Categoria</td>
-                                <td>
-                                    @if(p.Publicado)
-                                    {
-                                         @Html.Raw("Sim") 
-                                    } 
-                                    else 
-                                    { 
-                                        @Html.Raw("Não")
-                                    }
-                                </td>
-                                <td>
-                                    @if(p.Publicado)
-                                    {
-                                         @Html.Raw(p.DataPublicacao) 
-                                    } 
-                                    else 
-                                    { 
-                                        @Html.Raw("-")
-                                    }
-                                </td>
-                                <td>@Html.ActionLink("Remover", "Remove", new { id = p.Id })</td>
-                                <td>@Html.ActionLink("Publicar", "Publica", new { id = p.Id })</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </p>
-        </form>
-    </body>
-</html>
+<h1>Lista de Posts</h1>
+@Html.ActionLink("Incluir", "Novo", "Post")
+<p>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Titulo</th>
+                    <th>Resumo</th>
+                    <th>Categoria</th>
+                    <th>Publicado?</th>
+                    <th>Data de Publicação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
 
+            <tbody>
+                @foreach(var p in Model)
+                {
+                    <tr>
+                        <td>@Html.ActionLink("Editar", "Visualiza", new { Id = p.Id })</td>
+                        <td>@p.Titulo</td>
+                        <td>@p.Resumo</td>
+                        <td>@p.Categoria</td>
+                        <td>
+                            @if(p.Publicado)
+                            {
+                                    @Html.Raw("Sim") 
+                            } 
+                            else 
+                            { 
+                                @Html.Raw("Não")
+                            }
+                        </td>
+                        <td>
+                            @if(p.Publicado)
+                            {
+                                    @Html.Raw(p.DataPublicacao) 
+                            } 
+                            else 
+                            { 
+                                @Html.Raw("-")
+                            }
+                        </td>
+                        <td>@Html.ActionLink("Remover", "Remove", new { id = p.Id })</td>
+                        <td>@Html.ActionLink("Publicar", "Publica", new { id = p.Id })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</p>
+</form>
+
+@section Scripts{
+    @await Html.PartialAsync("_Scripts")
+}
 
 <!--<form asp-controller="Post" asp-action="Novo" method="Post">
             <button type="submit">Incluir</button>
