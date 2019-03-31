@@ -1,12 +1,13 @@
 
+
 <script src="~/js/jquery.min.js"></script>
 <script src="~/js/jquery.validate.min.js"></script>
 <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
 <script src="~/js/jquery-ui.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
-    $("input[name='Categoria'").autocomplete({
-        source: function(request, response){
+    $("input[name='Categoria'").autocomplete({ 
+        source: function(request, response){ 
             $.post(
                 "@Url.Action("CategoriaAutocomplete")",
                 { termo: request.term },
@@ -15,5 +16,13 @@
                 });     
             }
         });
-</script>
 
+    $("#termo").on("keyup", function(){
+        var value = $(this).val().toLowerCase();
+        $("#principal article").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+        
+    
+</script>

@@ -121,6 +121,18 @@ namespace Blog.DAO
             }
         }
         #endregion
+
+        #region BuscaPeloTermo
+        public IList<Post> BuscaPeloTermo(string termo)
+        {
+            using(BlogContext context = new BlogContext())
+            {
+                return context.Posts.Where(p => p.Resumo.Contains(termo)
+                                           || p.Titulo.Contains(termo)
+                                           && p.Publicado).ToList();
+            }
+        }
+        #endregion
     }
 }
 
