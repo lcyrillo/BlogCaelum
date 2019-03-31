@@ -1,11 +1,23 @@
 @model IList<Post>
 
-<div>
-    @foreach (var item in Model)
+<h3>@ViewBag.Termo </h3>
+
+<div id="principal">
+    @if(Model.Count == 0)
     {
         <article>
-            <h1>@item.Titulo</h1>
-            <p>@item.Resumo</p>
+            <h1>Nenhum artigo publicado</h1>
         </article>
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+            <article>
+                <h1>@item.Titulo</h1>
+                <p>@item.Resumo</p>
+            </article>
+            <hr>
+        }
     }
 </div>
