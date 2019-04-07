@@ -9,128 +9,101 @@ namespace Blog.DAO
 {
     public class PostDAO
     {
+        private readonly BlogContext _context;
+
+        public PostDAO(BlogContext context) => this._context = context;
 
         #region Lista
         public IList<Post> Lista()
         {
-            using(BlogContext context = new BlogContext())
-            {
-                var lista = context.Posts.ToList();
-                return lista;
-            }
+            var lista = _context.Posts.ToList();
+            return lista;
         }
         #endregion
 
         #region ListaPorId
         public Post ListaPorId(int id)
         {
-            using(BlogContext context = new BlogContext())
-            {
-                Post post = context.Posts.Find(id);
+            Post post = _context.Posts.Find(id);
 
-                return post;
-            }
+            return post;
         }
         #endregion
 
         #region Adiciona
         public void Adiciona(Post post)
         {
-            using(BlogContext context = new BlogContext())
-            {
-                context.Posts.Add(post);
-                context.SaveChanges();
-            }
+            _context.Posts.Add(post);
+            _context.SaveChanges();
         }
         #endregion
 
         #region FiltraPorCategoria
         public IList<Post> FiltraPorCategoria(string categoria)
         {
-            using(BlogContext context = new BlogContext())
-            {
-                var lista = from post in context.Posts
-                            where post.Categoria.Contains(categoria)
-                            select post;
+            var lista = from post in _context.Posts
+                        where post.Categoria.Contains(categoria)
+                        select post;
 
-                return lista.ToList();
-            }
+            return lista.ToList();
         }
         #endregion
 
         #region Remove
         public void Remove(int id)
         {
-            using(BlogContext context = new BlogContext())
-            {
-                Post post = context.Posts.Find(id);
+            Post post = _context.Posts.Find(id);
 
-                context.Posts.Remove(post);
+            _context.Posts.Remove(post);
 
-                context.SaveChanges();
-            }
+            _context.SaveChanges();
         }
         #endregion
 
         #region Atualiza
         public void Atualiza(Post post)
         {
-            using(BlogContext context = new BlogContext())
-            {
-                context.Entry(post).State = EntityState.Modified;
-                context.SaveChanges();
-            }
+            _context.Entry(post).State = EntityState.Modified;
+            _context.SaveChanges();
         }
         #endregion
         
         #region Publica
         public void Publica(int id)
         {
-            using(BlogContext context = new BlogContext())
-            {
-                Post post = context.Posts.Find(id);
+            Post post = _context.Posts.Find(id);
 
-                post.Publicado = true;
-                post.DataPublicacao = DateTime.Now;
+            post.Publicado = true;
+            post.DataPublicacao = DateTime.Now;
 
-                context.SaveChanges();
-            }
+            _context.SaveChanges();
         }
         #endregion
     
         #region FiltraPorCategoriaTermo
         public IList<string> FiltraPorCategoriaTermo(string termo)
         {
-            using(BlogContext context = new BlogContext())
-            {
-                return context.Posts.Where(p => p.Categoria.Contains(termo))
-                             .Select(p => p.Categoria)
-                             .Distinct()
-                             .ToList();
-            }
+            return _context.Posts.Where(p => p.Categoria.Contains(termo))
+                            .Select(p => p.Categoria)
+                            .Distinct()
+                            .ToList();
         }
         #endregion
 
         #region ListaPublicados
         public IList<Post> ListaPublicados()
         {
-            using(BlogContext context = new BlogContext())
-            {
-                return context.Posts.Where(p => p.Publicado)
-                                    .OrderByDescending(p => p.DataPublicacao).ToList();
-            }
+            return _context.Posts.Where(p => p.Publicado)
+                                .OrderByDescending(p => p.DataPublicacao).ToList();
         }
         #endregion
 
         #region BuscaPeloTermo
         public IList<Post> BuscaPeloTermo(string termo)
         {
-            using(BlogContext context = new BlogContext())
-            {
-                return context.Posts.Where(p => p.Resumo.Contains(termo)
-                                           || p.Titulo.Contains(termo)
-                                           && p.Publicado).ToList();
-            }
+            return _context.Posts.Where(p => p.Resumo.Contains(termo)
+                                        || p.Titulo.Contains(termo)
+                                        && p.Publicado).ToList();
         }
         #endregion
     }
