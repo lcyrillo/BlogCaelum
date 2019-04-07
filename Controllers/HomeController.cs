@@ -3,16 +3,23 @@ using Blog.DAO;
 using Blog.Models;
 using System.Collections;
 using System.Collections.Generic;
+using Blog.Infra;
 
 namespace Blog.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly PostDAO _dao;
+
+        public HomeController(PostDAO dao)
+        {
+            _dao = dao;
+        }
+
         #region Home
         public IActionResult Index()
         {
-            PostDAO dao = new PostDAO();
-            IList<Post> listaPublicados = dao.ListaPublicados();
+            IList<Post> listaPublicados = _dao.ListaPublicados();
             return View(listaPublicados);
         }
         #endregion
@@ -24,8 +31,7 @@ namespace Blog.Controllers
                 return RedirectToAction("Index");
             else{
                 ViewBag.Termo = "Você buscou por: " + termo;
-                PostDAO dao = new PostDAO();
-                IList<Post> posts = dao.BuscaPeloTermo(termo);
+                IList<Post> posts = _dao.BuscaPeloTermo(termo);
                 return View("Index", posts);
             }
         }
@@ -36,8 +42,7 @@ namespace Blog.Controllers
         public IActionResult BuscaAutocomplete(string termo)
         {
             ViewBag.Termo = "Você buscou por: " + termo;
-            PostDAO dao = new PostDAO();
-            var model = dao.BuscaPeloTermo(termo);
+            var model = _dao.BuscaPeloTermo(termo);
             return Json(model);
         }
         #endregion
