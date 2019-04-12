@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Blog.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AutorizacaoFilter]
     public class PostController : Controller
     {
         private readonly PostDAO _dao;

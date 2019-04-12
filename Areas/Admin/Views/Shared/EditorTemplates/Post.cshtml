@@ -13,3 +13,6 @@
 @Html.LabelFor(p => p.Categoria)
 @Html.TextBoxFor(p => p.Categoria, new { @class = "form-control" })
 @Html.ValidationMessageFor(p => p.Categoria)
+
+@Html.HiddenFor(p => p.DataPublicacao)
+@Html.HiddenFor(p => p.Publicado)

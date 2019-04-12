@@ -1,5 +1,6 @@
 using System.IO;
 using Blog.Models;
+using Blog.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -10,5 +11,7 @@ namespace Blog.Infra
         public BlogContext(DbContextOptions<BlogContext> options) : base(options) {}
 
         public DbSet<Post> Posts { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }
     } 
 }

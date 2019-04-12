@@ -181,6 +181,10 @@ input[type=submit]{
     margin-top: .5em;
 }
 
+#login-form{
+    left: 20%;
+}
+
 @media (min-width: 50em){
     .conteudo {
         width: 50em;
