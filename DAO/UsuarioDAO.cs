@@ -17,7 +17,13 @@ namespace Blog.DAO
 
         public Usuario Busca(string login, string senha)
         {
-            return _context.Usuarios.Where(u => u.Nome.Equals(login) && u.Senha.Equals(senha)).FirstOrDefault<Usuario>();
+            return _context.Usuarios.Where(u => u.Email.Equals(login) && u.Senha.Equals(senha)).FirstOrDefault<Usuario>();
+        }
+
+        public void Adiciona(Usuario usuario)
+        {
+            _context.Usuarios.Add(usuario);
+            _context.SaveChanges();
         }
     }
 }

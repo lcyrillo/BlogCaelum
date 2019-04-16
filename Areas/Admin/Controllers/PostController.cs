@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using Blog.DAO;
 using Blog.Infra;
 using Blog.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Blog.Areas.Admin.Controllers
 {
@@ -54,8 +56,9 @@ namespace Blog.Areas.Admin.Controllers
         {
             if(ModelState.IsValid)
             {
+                string usuarioJson = HttpContext.Session.GetString("usuario");
+                Usuario logado = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
                 _dao.Adiciona(post);
-
                 return RedirectToAction("Index");
             }
             else

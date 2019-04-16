@@ -40,5 +40,27 @@ namespace Blog.Controllers
             }
             return View("Login", model);
         }
+
+        [HttpGet]
+        public IActionResult Novo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Cadastra(RegistroViewModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                Usuario usuario = new Usuario(){
+                    Nome = model.LoginName,
+                    Email = model.Email,
+                    Senha = model.Senha
+                };
+                _dao.Adiciona(usuario);
+                return RedirectToAction("Login");
+            }
+            return View("Novo", model);
+        }
     }
 }

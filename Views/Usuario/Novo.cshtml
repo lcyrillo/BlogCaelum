@@ -1,0 +1,40 @@
+@model Blog.ViewModels.RegistroViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Resenha Cultural - Registro</title>
+        <link rel="stylesheet" href="~/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="~/css/estilo.css" type="text/css" /> 
+    </head>
+    <body>
+        <div class="container">
+            <main id="login-form">
+                <h2>Resenha Cultural - Registro</h2>
+                @Html.ValidationSummary()
+                @using (Html.BeginForm("Cadastra", "Usuario", FormMethod.Post))
+                {
+                    @Html.LabelFor(u => u.LoginName)
+                    @Html.TextBoxFor(u => u.LoginName, new { @class = "form-control" })
+
+                    @Html.LabelFor(u => u.Email)
+                    @Html.TextBoxFor(u => u.Email, new { @class = "form-control" })
+
+                    @Html.LabelFor(u => u.Senha)
+                    @Html.PasswordFor(u => u.Senha, new { @class = "form-control" })
+
+                    @Html.LabelFor(u => u.ConfirmacaoSenha)
+                    @Html.PasswordFor(u => u.ConfirmacaoSenha, new { @class = "form-control" })
+
+                    <input type="submit" value="Cadastrar" />
+                }
+            </main>
+        </div>
+    </body>
+</html>
+

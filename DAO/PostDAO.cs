@@ -38,6 +38,16 @@ namespace Blog.DAO
         }
         #endregion
 
+        #region Adiciona PostUsuario
+        public void Adiciona(Post post, Usuario usuario)
+        {
+            _context.Usuarios.Attach(usuario);
+            post.Autor = usuario;
+            _context.Posts.Add(post);
+            _context.SaveChanges();
+        }
+        #endregion
+
         #region FiltraPorCategoria
         public IList<Post> FiltraPorCategoria(string categoria)
         {
