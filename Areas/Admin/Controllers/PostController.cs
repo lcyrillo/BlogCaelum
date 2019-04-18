@@ -58,7 +58,7 @@ namespace Blog.Areas.Admin.Controllers
             {
                 string usuarioJson = HttpContext.Session.GetString("usuario");
                 Usuario logado = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
-                _dao.Adiciona(post);
+                _dao.Adiciona(post, logado);
                 return RedirectToAction("Index");
             }
             else
