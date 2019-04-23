@@ -4,6 +4,7 @@ using Blog.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Blog.Extensions;
 
 namespace Blog.Controllers
 {
@@ -30,7 +31,8 @@ namespace Blog.Controllers
 
                 if(usuario != null)
                 {
-                    HttpContext.Session.SetString("usuario", JsonConvert.SerializeObject(usuario));
+                    //HttpContext.Session.SetString("usuario", JsonConvert.SerializeObject(usuario));
+                    HttpContext.Session.Set<Usuario>("usuario", usuario);
                     return RedirectToAction("Index", "Post", new { area = "Admin"} );
                 }
                 else
