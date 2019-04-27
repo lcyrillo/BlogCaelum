@@ -1,0 +1,13 @@
+@model Blog.ViewModels.CategoriaComQuantidadeViewModel
+
+<ul>
+    @foreach (var categoria in Model.GetCategorias())
+    {
+        <li>
+            <a href="/Home/Categoria/@categoria">@categoria</a>
+            &nbsp;
+            <span class="badge">@Model.GetQuantidadeDePosts(categoria)</span>
+        </li>   
+    }
+</ul>
+
