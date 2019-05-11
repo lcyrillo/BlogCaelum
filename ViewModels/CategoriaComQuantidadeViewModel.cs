@@ -15,7 +15,7 @@ namespace Blog.ViewModels
 
             foreach(Post post in posts)
             {
-                string categoria = post.Categoria;
+                string categoria = post.Categoria.Trim();
 
                 if(categoriaPorQuantidade.ContainsKey(categoria))
                 {
